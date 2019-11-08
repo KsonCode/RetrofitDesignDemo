@@ -1,6 +1,9 @@
 package com.bwie.retrofitdesigndemo.base;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.widget.Toast;
@@ -8,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.blankj.utilcode.util.NetworkUtils;
 import com.bwie.retrofitdesigndemo.MainActivity;
 import com.bwie.retrofitdesigndemo.base.mvp.IBasePresenter;
 import com.bwie.retrofitdesigndemo.base.mvp.IBaseView;
@@ -38,39 +42,48 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected abstract void initView();
 
 
-
     protected abstract int bindLayoutId();
 
     /**
      * 网络判断
+     *
      * @return
      */
-    public boolean isNet(){
+    public boolean isNet() {
 
-        return true;
+        if (NetworkUtils.isConnected()){
+            showToast("有网");
+            return true;
+        }else {
+            showToast("无网");
+            return false;
+        }
+
     }
 
     /**
      * 无参跳转
+     *
      * @param clz
      */
-    public void startActivity(Class<?> clz){
+    public void startActivity(Class<?> clz) {
 
-        startActivity( new Intent(this,clz));
+        startActivity(new Intent(this, clz));
     }
 
     /**
      * 显示toast
+     *
      * @param txt
      */
-    public void showToast(String txt){
+    public void showToast(String txt) {
         Toast.makeText(this, txt, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (unbinder!=null){
+        if (unbinder != null) {
             unbinder.unbind();
         }
 

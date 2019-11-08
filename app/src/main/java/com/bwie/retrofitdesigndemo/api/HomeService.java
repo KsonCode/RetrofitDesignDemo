@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 
 public interface HomeService {
 
-    @GET
+    @GET("small/commodity/v1/commodityList")
     Observable<HomeEntity> getHomeData();
 }

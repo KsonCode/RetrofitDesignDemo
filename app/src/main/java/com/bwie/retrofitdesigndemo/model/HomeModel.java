@@ -31,7 +31,7 @@ public class HomeModel implements HomeContract.IHomeModel {
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(Throwable throwable) throws Exception {
-                        netCallback.failure("网络有问题");
+                        netCallback.failure("网络有问题"+throwable.getMessage());
                     }
                 });
 
