@@ -1,6 +1,8 @@
 package com.bwie.retrofitdesigndemo.utils;
 
 import com.bwie.retrofitdesigndemo.api.Api;
+import com.bwie.retrofitdesigndemo.api.HomeService;
+import com.bwie.retrofitdesigndemo.api.UserService;
 
 import java.util.concurrent.TimeUnit;
 
@@ -58,6 +60,7 @@ public class RetrofitUtils {
      *
      */
     public <T> T createService(Class<T> clz){
+
         return retrofit.create(clz);
     }
 
