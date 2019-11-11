@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.bwie.retrofitdesigndemo"
         minSdkVersion 15
-        targetSdkVersion 28
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

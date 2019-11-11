@@ -19,6 +19,9 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LoginActivity extends BaseActivity {
 
@@ -46,7 +49,6 @@ public class LoginActivity extends BaseActivity {
         params.put("pwd","111111");
 
         RetrofitUtils.getInstance().createService(UserService.class)
-
                 .login(params)
                 .subscribeOn(Schedulers.io())//请求网络的线程，io线程，子线程
                 .observeOn(AndroidSchedulers.mainThread())//响应数据的主线程
@@ -66,6 +68,21 @@ public class LoginActivity extends BaseActivity {
 
             }
         });
+
+        RetrofitUtils.getInstance().createService(UserService.class)
+                .login1(new HashMap<>())
+                .enqueue(new Callback<UserEntity>() {
+                    @Override
+                    public void onResponse(Call<UserEntity> call, Response<UserEntity> response) {
+
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<UserEntity> call, Throwable t) {
+
+                    }
+                });
 
     }
 
