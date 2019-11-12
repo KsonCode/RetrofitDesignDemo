@@ -1,8 +1,7 @@
 package com.bwie.retrofitdesigndemo.contract;
 
-import com.bwie.retrofitdesigndemo.base.mvp.IBaseModel;
-import com.bwie.retrofitdesigndemo.base.mvp.IBasePresenter;
-import com.bwie.retrofitdesigndemo.base.mvp.IBaseView;
+
+import com.bwie.lib_core.base.mvp.IBasePresenter;
 import com.bwie.retrofitdesigndemo.utils.NetCallback;
 
 import java.util.HashMap;
@@ -24,7 +23,7 @@ public interface HomeContract {
 
     }
 
-    abstract class IHomePresenter extends IBasePresenter{
+    abstract class IHomePresenter extends IBasePresenter {
 
         public abstract void getHome(HashMap<String, String> params);
 

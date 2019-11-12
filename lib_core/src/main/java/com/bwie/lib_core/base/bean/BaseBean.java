@@ -1,4 +1,4 @@
-package com.bwie.retrofitdesigndemo.base.bean;
+package com.bwie.lib_core.base.bean;
 
 public class BaseBean {
     public String message;

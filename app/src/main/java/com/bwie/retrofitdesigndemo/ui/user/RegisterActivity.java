@@ -1,8 +1,7 @@
 package com.bwie.retrofitdesigndemo.ui.user;
 
+import com.bwie.lib_core.base.BaseActivity;
 import com.bwie.retrofitdesigndemo.R;
-import com.bwie.retrofitdesigndemo.base.BaseActivity;
-
 public class RegisterActivity extends BaseActivity {
     @Override
     protected void initData() {

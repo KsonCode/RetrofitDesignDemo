@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
+import com.blankj.utilcode.util.NetworkUtils;
+import com.bwie.lib_core.base.BaseActivity;
 import com.bwie.retrofitdesigndemo.adapter.HomeAdapter;
-import com.bwie.retrofitdesigndemo.base.BaseActivity;
-import com.bwie.retrofitdesigndemo.base.mvp.IBasePresenter;
 import com.bwie.retrofitdesigndemo.contract.HomeContract;
 import com.bwie.retrofitdesigndemo.entity.HomeDao;
 import com.bwie.retrofitdesigndemo.entity.HomeEntity;
@@ -54,7 +54,7 @@ public class MainActivity extends BaseActivity implements HomeContract.IHmoeView
         homePresenter = new HomePresenter(this);
         homePresenter.attach(this);
 
-        if (isNet()) {//有网
+        if (NetworkUtils.isConnected() ){//有网
 
             homePresenter.getHome(new HashMap<>());
         } else {

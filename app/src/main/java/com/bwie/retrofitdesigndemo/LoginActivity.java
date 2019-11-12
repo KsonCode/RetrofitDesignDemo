@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.blankj.utilcode.util.SPUtils;
+import com.bwie.lib_core.base.BaseActivity;
 import com.bwie.retrofitdesigndemo.api.ProductServicee;
 import com.bwie.retrofitdesigndemo.api.UserService;
-import com.bwie.retrofitdesigndemo.base.BaseActivity;
 import com.bwie.retrofitdesigndemo.entity.UserEntity;
 import com.bwie.retrofitdesigndemo.utils.RetrofitUtils;
 

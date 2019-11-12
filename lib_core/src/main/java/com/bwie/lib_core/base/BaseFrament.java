@@ -1,19 +1,17 @@
-package com.bwie.retrofitdesigndemo.base;
+package com.bwie.lib_core.base;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+
 
 public abstract class BaseFrament extends Fragment {
 

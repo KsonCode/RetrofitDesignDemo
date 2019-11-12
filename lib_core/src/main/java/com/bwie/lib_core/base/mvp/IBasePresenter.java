@@ -1,4 +1,4 @@
-package com.bwie.retrofitdesigndemo.base.mvp;
+package com.bwie.lib_core.base.mvp;
 
 import java.lang.ref.WeakReference;
 

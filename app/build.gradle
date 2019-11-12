@@ -72,6 +72,7 @@ dependencies {
 
     // 工具类，androidutilcode
     implementation 'com.blankj:utilcodex:1.25.9'
+    implementation project(path: ':lib_core')
 
 }
 
