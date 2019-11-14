@@ -25,11 +25,11 @@ public class CartActivity extends AppCompatActivity {
      */
     private void addCart() {
 
-        HashMap<String,String> headers = new HashMap<>();
-        headers.put(Constansts.USER_ID, SPUtils.getInstance().getString(Constansts.USER_ID));
-        headers.put(Constansts.SESSION_ID,SPUtils.getInstance().getString(Constansts.SESSION_ID));
-
-        RetrofitUtils.getInstance().createService(ProductServicee.class)
-                .syncData(headers,"{}");
+//        HashMap<String,String> headers = new HashMap<>();
+//        headers.put(Constansts.USER_ID, SPUtils.getInstance().getString(Constansts.USER_ID));
+//        headers.put(Constansts.SESSION_ID,SPUtils.getInstance().getString(Constansts.SESSION_ID));
+//
+//        RetrofitUtils.getInstance().createService(ProductServicee.class)
+//                .syncData(headers,"{}");
     }
 }

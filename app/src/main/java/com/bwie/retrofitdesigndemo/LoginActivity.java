@@ -42,6 +42,11 @@ public class LoginActivity extends BaseActivity {
         return R.layout.activity_login;
     }
 
+    @Override
+    protected void click(View v) {
+        
+    }
+
     @OnClick(R.id.login)
     public void login(View v){
         HashMap<String ,String> params = new HashMap<>();
@@ -100,7 +105,7 @@ public class LoginActivity extends BaseActivity {
                     public void accept(ResponseBody responseBody) throws Exception {
 
                         String result = responseBody.string();
-                        showToast(result);
+//                        showToast(result);
                     }
                 }, new Consumer<Throwable>() {
                     @Override

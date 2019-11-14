@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
 
 import com.blankj.utilcode.util.NetworkUtils;
 import com.bwie.lib_core.base.BaseActivity;
@@ -91,6 +92,7 @@ public class MainActivity extends BaseActivity implements HomeContract.IHmoeView
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
+
     }
 
     @Override
@@ -102,6 +104,11 @@ public class MainActivity extends BaseActivity implements HomeContract.IHmoeView
     protected void onDestroy() {
         super.onDestroy();
         homePresenter.detach();//解绑
+    }
+
+    @Override
+    protected void click(View v) {
+
     }
 
 

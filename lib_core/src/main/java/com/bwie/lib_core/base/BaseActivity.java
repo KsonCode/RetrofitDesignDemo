@@ -2,6 +2,7 @@ package com.bwie.lib_core.base;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -11,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
 //    @Override
 //    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
 //        super.onCreate(savedInstanceState, persistentState);
@@ -35,6 +36,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
 
     protected abstract int bindLayoutId();
+
 
 //    /**
 //     * 网络判断
@@ -64,9 +66,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * 显示toast
      *
      * @param txt
+     * @param a
      */
     public void showToast(String txt) {
         Toast.makeText(this, txt, Toast.LENGTH_SHORT).show();
@@ -82,4 +84,19 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
 
+
+    /**
+     * 公共的点击事件
+     * @param v
+     */
+    @Override
+    public void onClick(View v) {
+        click(v);
+    }
+
+    /**
+     * 子类实现的点击事件
+     * @param v
+     */
+    protected abstract void click(View v);
 }
