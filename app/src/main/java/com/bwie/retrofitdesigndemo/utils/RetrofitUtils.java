@@ -39,7 +39,6 @@ public class RetrofitUtils {
 
     //私有构造
     private RetrofitUtils(){
-
         try {
             //创建证书对象，方便管理证书数据
             KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
@@ -81,7 +80,6 @@ public class RetrofitUtils {
     }
 
     //公共实例
-
     public static RetrofitUtils getInstance(){
         if (mInstance==null){
             synchronized (RetrofitUtils.class){

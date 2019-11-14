@@ -6,7 +6,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.bwie.retrofitdesigndemo"
-        minSdkVersion 15
+        minSdkVersion 17
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -60,6 +60,7 @@ dependencies {
 
 //    implementation 'com.android.support:recyclerview-v7:28.0.0'
     implementation 'com.jcodecraeer:xrecyclerview:1.6.0'
+//    implementation 'com.android.support:recyclerview-v7:23.4.0'
 
 
     //greendao
@@ -74,6 +75,10 @@ dependencies {
     implementation 'com.blankj:utilcodex:1.25.9'
     implementation project(path: ':lib_core')
 
+
+    //图片选择器
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.9'
+
 }
 
 greendao {
@@ -82,6 +87,7 @@ greendao {
     targetGenDir 'src/main/java'
 }
 
+//统一版本support，28。0。0
 configurations.all {
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->
         def requested = details.requested

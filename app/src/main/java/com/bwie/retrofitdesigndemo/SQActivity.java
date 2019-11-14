@@ -2,6 +2,7 @@ package com.bwie.retrofitdesigndemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -10,14 +11,19 @@ import com.bwie.lib_core.base.BaseActivity;
 import com.bwie.lib_core.base.bean.BaseBean;
 import com.bwie.retrofitdesigndemo.api.SQservice;
 import com.bwie.retrofitdesigndemo.utils.RetrofitUtils;
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
+import butterknife.BindView;
+import butterknife.OnClick;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
-public class SQActivity extends BaseActivity {
+public class SQActivity extends BaseActivity implements XRecyclerView.LoadingListener {
 
 
+    @BindView(R.id.rv)
+    XRecyclerView xRecyclerView;
 
     @Override
     protected void initData() {
@@ -26,6 +32,11 @@ public class SQActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+
+        xRecyclerView.setLoadingListener(this);
+
+        xRecyclerView.setLoadingMoreEnabled(true);//加载更多配置
+
 
     }
 
@@ -62,5 +73,20 @@ public class SQActivity extends BaseActivity {
                     }
                 });
 
+    }
+
+    @Override
+    public void onRefresh() {
+
+    }
+
+    @Override
+    public void onLoadMore() {
+
+    }
+
+    @OnClick(R.id.post)
+    public void post(View view){
+        startActivity(new Intent(this,PostActivity.class));
     }
 }
