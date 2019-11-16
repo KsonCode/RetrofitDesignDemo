@@ -42,6 +42,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.VH> {
     public void onBindViewHolder(@NonNull VH holder, int position) {
 
         Glide.with(context).load(Uri.fromFile(new File(list.get(position).getCompressPath()))).into(holder.iv);
+//        Glide.with(context).load(list.get(position).getCompressPath()).into(holder.iv);
 
 
 

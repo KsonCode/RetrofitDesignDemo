@@ -74,9 +74,8 @@ public class PostActivity extends BaseActivity {
         dialogLayout.setVisibility(View.GONE);
         PictureSelector.create(this)
                 .openCamera(PictureMimeType.ofImage())//打开相机
-                .compress(true)
-
-                .forResult(PictureConfig.CHOOSE_REQUEST);
+                .compress(true)//压缩
+                .forResult(PictureConfig.CHOOSE_REQUEST);//回调request code
     // 是否压缩 true or false
     }
 
@@ -144,6 +143,17 @@ public class PostActivity extends BaseActivity {
             showToast("输入内容不能为空");
             return;
         }
+
+        //上传头像
+        File file = new File(selectList.get(0).getCompressPath());
+        //把文件对象包装成请求体对象
+//            RequestBody requestFile = RequestBody.create(MediaType.parse("image/*"), file);
+        RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+        // MultipartBody.Part  和后端约定好Key，这里的partName是用file
+        //最终转换成需要的多表单对象
+        MultipartBody.Part body = MultipartBody.Part.createFormData("file", file.getName(), requestFile);
+//上传头像结束
+
 
         //文本
         RequestBody content = RequestBody.create(MediaType.parse("multipart/form-data"),et.getText().toString());
